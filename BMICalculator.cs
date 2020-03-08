@@ -1,4 +1,6 @@
-﻿namespace Assignment3
+﻿using System;
+
+namespace Assignment3
 {
     class BMICalculator
     {
@@ -62,9 +64,33 @@
             unit = value;
         }
 
+        public string BmiWeightCategory()
+        {
+            double bmi = CalculateBMI();
+            string stringout = string.Empty;
+            if (bmi > 30)
+                stringout = "Overweight (Obesity class III)";
+            else if (bmi < 30 && bmi > 25)
+            {
+                stringout = "Overweight";
+            } else if (bmi < 25 && bmi > 18.5)
+            {
+                stringout = "Normal weight";
 
+            }
+            else if (bmi < 18.5)
+            {
+                stringout = "Underweight";
+            }
+            return stringout;
+        }
 
-
+        // TODO: this is my last entry, på tisdag borde jag kunna pressentera resultat textBoxen
+        private double CalculateBMI()
+        {
+            double bmi = GetHeight() / GetWeight() * GetWeight();
+            return bmi;
+        }
     } //end class
 
 

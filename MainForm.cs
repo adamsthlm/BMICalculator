@@ -110,6 +110,6 @@ namespace Assignment3
             return ok;
 
         }
-    }
-}
+    } // end class
+} // end namespace
 
