@@ -14,6 +14,8 @@ namespace Assignment3
             InitializeGUI();
         }
 
+
+
         private void InitializeGUI()
         {
             this.Text = "The Body Mass Calculator, by Carl-Adam Berglund a Superior programmer";
@@ -27,14 +29,55 @@ namespace Assignment3
             txHeight.Text = string.Empty;
             txWeight.Text = string.Empty;
 
-           
-
         }
 
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void rbtMetric_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtMetric.Checked)
+            {
+                lblHeight.Text = "Height in (cm)";
+                lblWeight.Text = "Weight in (kg)";
+            }
+        }
+
+        private void rbtnUsUnit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnUsUnit.Checked)
+            {
+                lblHeight.Text = "Height in (feet)";
+                lblWeight.Text = "Height in (lbs)";
+            }
+        }
+
+        private void calcButton_Click(object sender, EventArgs e)
+        {
+            bool ok = ReadInputBMI();
+            if (ok)
+            {
+                DisplayResults();
+            }
+        }
+
+        private void DisplayResults()
+        {
+            MessageBox.Show("Not implemeneted yet!!");
+        }
+
+        private bool ReadInputBMI()
+        {
+            if (txtName.Text.Length.Equals(0))
+            {
+                return false;
+            }
+            else return true;
         }
     }
 }

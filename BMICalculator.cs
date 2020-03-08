@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Assignment3
 {
     class BMICalculator
     {
-        
+        // double height;
+        // double weight;
+
+        public double height { get; set; }
+        public double weight { get; set; }
+
+
     }
 }

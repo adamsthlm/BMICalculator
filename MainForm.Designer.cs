@@ -77,21 +77,21 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(95, 18);
+            this.txtName.Location = new System.Drawing.Point(120, 14);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(346, 20);
             this.txtName.TabIndex = 3;
             // 
             // txHeight
             // 
-            this.txHeight.Location = new System.Drawing.Point(95, 43);
+            this.txHeight.Location = new System.Drawing.Point(120, 42);
             this.txHeight.Name = "txHeight";
             this.txHeight.Size = new System.Drawing.Size(89, 20);
             this.txHeight.TabIndex = 4;
             // 
             // txWeight
             // 
-            this.txWeight.Location = new System.Drawing.Point(95, 68);
+            this.txWeight.Location = new System.Drawing.Point(120, 68);
             this.txWeight.Name = "txWeight";
             this.txWeight.Size = new System.Drawing.Size(89, 20);
             this.txWeight.TabIndex = 5;
@@ -117,6 +117,7 @@
             this.rbtMetric.TabStop = true;
             this.rbtMetric.Text = "Metric";
             this.rbtMetric.UseVisualStyleBackColor = true;
+            this.rbtMetric.CheckedChanged += new System.EventHandler(this.rbtMetric_CheckedChanged);
             // 
             // rbtnUsUnit
             // 
@@ -128,6 +129,7 @@
             this.rbtnUsUnit.TabStop = true;
             this.rbtnUsUnit.Text = "Us";
             this.rbtnUsUnit.UseVisualStyleBackColor = true;
+            this.rbtnUsUnit.CheckedChanged += new System.EventHandler(this.rbtnUsUnit_CheckedChanged);
             // 
             // calcButton
             // 
@@ -137,6 +139,7 @@
             this.calcButton.TabIndex = 7;
             this.calcButton.Text = "Calculate";
             this.calcButton.UseVisualStyleBackColor = true;
+            this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
             // 
             // groupBox2
             // 
