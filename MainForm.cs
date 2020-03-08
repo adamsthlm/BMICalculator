@@ -69,6 +69,7 @@ namespace Assignment3
         private void DisplayResults()
         {
             MessageBox.Show("Not implemeneted yet!!");
+            ReadHeight();
         }
 
         private bool ReadInputBMI()
@@ -79,5 +80,36 @@ namespace Assignment3
             }
             else return true;
         }
+
+        //TODO fixa ReadHeight metoden
+
+        private bool ReadHeight()
+        {
+            bool ok = double.TryParse(txHeight.Text, out double outValue);
+            if (ok)
+            {
+                if (outValue > 0)
+                {
+                    if (bmiCalc.GetUnit() == UnitTypes.American)
+                    {
+                        bmiCalc.SetHeight(outValue * 12.00);
+                    }
+                    else
+                    {
+                        bmiCalc.SetHeight(outValue / 100.00);
+                    }
+                }
+                else
+                    ok = false;
+
+            }
+
+            if (!ok)
+
+                MessageBox.Show("Invalid height value!");
+            return ok;
+
+        }
     }
 }
+
