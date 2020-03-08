@@ -17,8 +17,7 @@ namespace Assignment3
         private void InitializeGUI()
         {
             this.Text = "The Body Mass Calculator, by Carl-Adam Berglund a Superior programmer";
-
-
+           
 
         }
 
