@@ -17,6 +17,16 @@ namespace Assignment3
         private void InitializeGUI()
         {
             this.Text = "The Body Mass Calculator, by Carl-Adam Berglund a Superior programmer";
+
+            //input controls
+            rbtnUsUnit.Checked = true;
+            lblHeight.Text = "Height (feet)";
+            lblWeight.Text = "Weight (lbs)";
+
+            // output controls
+            txHeight.Text = string.Empty;
+            txWeight.Text = string.Empty;
+
            
 
         }
