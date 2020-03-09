@@ -1,4 +1,4 @@
-﻿namespace Exercise1___String_Validation.Properties
+﻿namespace Assignment3.Properties
 {
 
 

@@ -6,7 +6,7 @@ namespace Assignment3
     public partial class MainForm : Form
     {
         // create an instance of BMICalculatior
-        private BMICalculator bmiCalc = new BMICalculator();
+        private readonly BMICalculator bmiCalc = new BMICalculator();
 
         public MainForm()
         {
@@ -39,7 +39,7 @@ namespace Assignment3
 
 
 
-        private void rbtMetric_CheckedChanged(object sender, EventArgs e)
+        private void RbtMetric_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtMetric.Checked)
             {
@@ -48,7 +48,7 @@ namespace Assignment3
             }
         }
 
-        private void rbtnUsUnit_CheckedChanged(object sender, EventArgs e)
+        private void RbtnUsUnit_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnUsUnit.Checked)
             {
@@ -57,7 +57,7 @@ namespace Assignment3
             }
         }
 
-        private void calcButton_Click(object sender, EventArgs e)
+        private void CalcButton_Click(object sender, EventArgs e)
         {
             bool ok = ReadInputBMI();
             if (ok)
@@ -65,11 +65,14 @@ namespace Assignment3
                 DisplayResults();
             }
         }
-
+        //TODO problem med utdata
         private void DisplayResults()
         {
-            MessageBox.Show("Not implemeneted yet!!");
+            double myBmi;
             ReadHeight();
+            myBmi = bmiCalc.CalculateBMI();
+            label6.Text = (myBmi.ToString());
+
         }
 
         private bool ReadInputBMI()

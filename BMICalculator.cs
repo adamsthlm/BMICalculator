@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Assignment3
+﻿namespace Assignment3
 {
     class BMICalculator
     {
@@ -73,7 +71,8 @@ namespace Assignment3
             else if (bmi < 30 && bmi > 25)
             {
                 stringout = "Overweight";
-            } else if (bmi < 25 && bmi > 18.5)
+            }
+            else if (bmi < 25 && bmi > 18.5)
             {
                 stringout = "Normal weight";
 
@@ -86,7 +85,7 @@ namespace Assignment3
         }
 
         // TODO: this is my last entry, på tisdag borde jag kunna pressentera resultat textBoxen
-        private double CalculateBMI()
+        public double CalculateBMI()
         {
             double bmi = GetHeight() / GetWeight() * GetWeight();
             return bmi;

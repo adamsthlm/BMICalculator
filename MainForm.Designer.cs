@@ -117,7 +117,7 @@
             this.rbtMetric.TabStop = true;
             this.rbtMetric.Text = "Metric";
             this.rbtMetric.UseVisualStyleBackColor = true;
-            this.rbtMetric.CheckedChanged += new System.EventHandler(this.rbtMetric_CheckedChanged);
+            this.rbtMetric.CheckedChanged += new System.EventHandler(this.RbtMetric_CheckedChanged);
             // 
             // rbtnUsUnit
             // 
@@ -129,7 +129,7 @@
             this.rbtnUsUnit.TabStop = true;
             this.rbtnUsUnit.Text = "Us";
             this.rbtnUsUnit.UseVisualStyleBackColor = true;
-            this.rbtnUsUnit.CheckedChanged += new System.EventHandler(this.rbtnUsUnit_CheckedChanged);
+            this.rbtnUsUnit.CheckedChanged += new System.EventHandler(this.RbtnUsUnit_CheckedChanged);
             // 
             // calcButton
             // 
@@ -139,7 +139,7 @@
             this.calcButton.TabIndex = 7;
             this.calcButton.Text = "Calculate";
             this.calcButton.UseVisualStyleBackColor = true;
-            this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
+            this.calcButton.Click += new System.EventHandler(this.CalcButton_Click);
             // 
             // groupBox2
             // 
