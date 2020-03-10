@@ -69,7 +69,7 @@ namespace Assignment3
             bool ok = ReadInputBMI();
             if (ok)
             {
-                DisplayResults();
+                if (ReadHeight() && ReadWeight()) { DisplayResults(); }
             }
         }
         //TODO problem med utdata
@@ -78,8 +78,8 @@ namespace Assignment3
             double myBmi;
             ReadHeight();
             myBmi = bmiCalc.CalculateBMI();
-            label6.Text = (myBmi.ToString());
-
+            string outDataString = (myBmi.ToString().Trim());
+            label6.Text = outDataString;
         }
 
         private bool ReadInputBMI()
@@ -91,7 +91,6 @@ namespace Assignment3
             else return true;
         }
 
-        //TODO fixa ReadHeight metoden
 
         private bool ReadHeight()
         {
@@ -120,6 +119,33 @@ namespace Assignment3
             return ok;
 
         }
+
+        // ReadWeight is based on ReadHeight check calculation... P(false)
+        private bool ReadWeight()
+        {
+            bool ok = double.TryParse(txWeight.Text, out double outValue);
+            if (ok)
+            {
+                if (outValue > 0)
+                {
+                    if (bmiCalc.GetUnit() == UnitTypes.American)
+                    {
+                        bmiCalc.SetWeight(outValue / 2);
+
+                    }
+                    else
+                    {
+                        bmiCalc.SetWeight(outValue / 100);
+
+                    }
+                }
+                else ok = false;
+            }
+            if (!ok)
+                MessageBox.Show("Invalid weight value!");
+            return ok;
+        }
+
     } // end class
 } // end namespace
 

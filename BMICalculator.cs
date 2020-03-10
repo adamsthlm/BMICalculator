@@ -91,8 +91,10 @@ namespace Assignment3
         }
 
         // TODO: this is my last entry, på tisdag borde jag kunna pressentera resultat textBoxen
+        // borde ja...
         public double CalculateBMI()
         {
+            
             double bmi = GetHeight() / GetWeight() * GetWeight();
             return bmi;
         }
