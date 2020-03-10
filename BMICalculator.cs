@@ -91,12 +91,22 @@ namespace Assignment3
         }
 
         // TODO: this is my last entry, på tisdag borde jag kunna pressentera resultat textBoxen
-        // borde ja...
+        // Jag kunde inte låtabli att kolla på videon till slut... :(
+        // 
         public double CalculateBMI()
         {
-            
-            double bmi = GetHeight() / GetWeight() * GetWeight();
-            return bmi;
+            double factor;
+            if (unit==UnitTypes.American)
+            {
+                factor = 703.0;
+            }
+            else
+            {
+                factor = 1.0;
+            }
+            double bmiValue = factor * weight / (height * height);
+
+            return bmiValue;
         }
     } //end class
 

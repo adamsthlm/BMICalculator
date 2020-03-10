@@ -83,7 +83,7 @@ namespace Assignment3
             double myBmi;
             ReadHeight();
             myBmi = bmiCalc.CalculateBMI();
-            string outDataString = (myBmi.ToString().Trim());
+            string outDataString = (myBmi.ToString());
             label6.Text = outDataString;
             label7.Text = bmiCalc.BmiWeightCategory();
             label8.Text = bmiCalc.GetName();
@@ -108,11 +108,11 @@ namespace Assignment3
                 {
                     if (bmiCalc.GetUnit() == UnitTypes.American)
                     {
-                        bmiCalc.SetHeight(outValue * 12.00);
+                        bmiCalc.SetHeight(outValue * 12.00); // * 12.00
                     }
                     else
                     {
-                        bmiCalc.SetHeight(outValue / 100.00);
+                        bmiCalc.SetHeight(outValue / 100.00); // delat med 100.00
                     }
                 }
                 else
@@ -128,6 +128,7 @@ namespace Assignment3
         }
 
         // ReadWeight is based on ReadHeight check calculation..
+        // Det är något alvarligt fel med den Amerikanska beräkningen
         private bool ReadWeight()
         {
             bool ok = double.TryParse(txWeight.Text, out double outValue);
@@ -137,7 +138,7 @@ namespace Assignment3
                 {
                     if (bmiCalc.GetUnit() == UnitTypes.American)
                     {
-                        bmiCalc.SetWeight(outValue);
+                        bmiCalc.SetWeight(outValue * 4);
 
                     }
                     else
