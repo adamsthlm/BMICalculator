@@ -69,7 +69,12 @@ namespace Assignment3
             bool ok = ReadInputBMI();
             if (ok)
             {
-                if (ReadHeight() && ReadWeight()) { DisplayResults(); }
+                bmiCalc.SetName(txtName.Text);
+                bmiCalc.SetWeight(double.Parse(txWeight.Text));
+                bmiCalc.SetHeight(double.Parse(txHeight.Text));
+
+                if (ReadHeight() && ReadWeight()) { DisplayResults(); } else MessageBox.Show("Please check inputdata again!");
+
             }
         }
         //TODO problem med utdata
@@ -80,6 +85,8 @@ namespace Assignment3
             myBmi = bmiCalc.CalculateBMI();
             string outDataString = (myBmi.ToString().Trim());
             label6.Text = outDataString;
+            label7.Text = bmiCalc.BmiWeightCategory();
+            label8.Text = bmiCalc.GetName();
         }
 
         private bool ReadInputBMI()
@@ -120,7 +127,7 @@ namespace Assignment3
 
         }
 
-        // ReadWeight is based on ReadHeight check calculation... P(false)
+        // ReadWeight is based on ReadHeight check calculation..
         private bool ReadWeight()
         {
             bool ok = double.TryParse(txWeight.Text, out double outValue);
@@ -130,12 +137,12 @@ namespace Assignment3
                 {
                     if (bmiCalc.GetUnit() == UnitTypes.American)
                     {
-                        bmiCalc.SetWeight(outValue / 2);
+                        bmiCalc.SetWeight(outValue);
 
                     }
                     else
                     {
-                        bmiCalc.SetWeight(outValue / 100);
+                        bmiCalc.SetWeight(outValue);
 
                     }
                 }
@@ -146,6 +153,10 @@ namespace Assignment3
             return ok;
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     } // end class
 } // end namespace
 
