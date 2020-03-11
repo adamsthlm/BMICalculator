@@ -17,27 +17,24 @@ namespace Assignment3
 
 
         /// <summary>
-        /// Getter name
+        /// Getters och setters, först gjorde jag som i Java fast detta är mycket snyggare med propertys alltså..-------------- Getters och setter starts -----------
         /// </summary>
         /// <returns></returns>
-        public string GetName()
+        public string Name
         {
-            return name;
-        }
-
-        public void SetName(string value)
-        {
-            //Validate before accepting it
-            if (!string.IsNullOrEmpty(value))
+            get => name;
+            set
             {
-                name = value;
+                //Validate before accepting it
+                if (!string.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
             }
         }
 
-        public double GetHeight()
-        {
-            return height;
-        }
+        public double Height => height; // en snyggare getter och setter
+
         public void SetHeight(double value)
         {
             if (value >= 0)
@@ -45,32 +42,26 @@ namespace Assignment3
                 height = value;
             }
         }
-
-        public double GetWeight()
+        // snyggare getter och setter tack alt-enter!
+        public double Weight
         {
-            return weight;
-        }
-
-        public void SetWeight(double value)
-        {
-            if (value >= 0)
+            get => weight;
+            set
             {
-                weight = value;
+                if (value >= 0)
+                {
+                    weight = value;
+                }
             }
         }
-        public UnitTypes GetUnit()
-        {
-            return unit;
-        }
 
-        public void SetUnit(UnitTypes value)
-        {
-            unit = value;
-        }
+        public UnitTypes Unit { get => unit; set => unit = value; }
+
+        // ------------------------------------------------------------------ getter and setter ends 
 
         public string BmiWeightCategory()
         {
-            double bmi = CalculateBMI();
+            double bmi = CalculateBMI;
             string stringout = string.Empty;
             if (bmi > 30)
                 stringout = "Overweight (Obesity class III)";
@@ -91,22 +82,25 @@ namespace Assignment3
         }
 
         // TODO: this is my last entry, på tisdag borde jag kunna pressentera resultat textBoxen
-        // Jag kunde inte låtabli att kolla på videon till slut... :(
+        // Jag kunde inte låtabli att kolla på videon till slut... :( && jag trycker alt-enter på allt möjligt nu, hehe!
         // 
-        public double CalculateBMI()
+        public double CalculateBMI
         {
-            double factor;
-            if (unit==UnitTypes.American)
+            get
             {
-                factor = 703.0;
-            }
-            else
-            {
-                factor = 1.0;
-            }
-            double bmiValue = factor * weight / (height * height);
+                double factor;
+                if (unit == UnitTypes.American)
+                {
+                    factor = 703.0;
+                }
+                else
+                {
+                    factor = 1.0;
+                }
+                double bmiValue = factor * weight / (height * height);
 
-            return bmiValue;
+                return bmiValue;
+            }
         }
     } //end class
 

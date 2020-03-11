@@ -21,8 +21,6 @@ namespace Assignment3
             InitializeGUI();
         }
 
-
-
         private void InitializeGUI()
         {
             this.Text = "The Body Mass Calculator, by Carl-Adam Berglund a Superior programmer";
@@ -38,13 +36,10 @@ namespace Assignment3
 
         }
 
-
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
-
-
 
         private void RbtMetric_CheckedChanged(object sender, EventArgs e)
         {
@@ -69,24 +64,25 @@ namespace Assignment3
             bool ok = ReadInputBMI();
             if (ok)
             {
-                bmiCalc.SetName(txtName.Text);
-                bmiCalc.SetWeight(double.Parse(txWeight.Text));
+                bmiCalc.Name = txtName.Text;
+                bmiCalc.Weight = double.Parse(txWeight.Text);
                 bmiCalc.SetHeight(double.Parse(txHeight.Text));
 
                 if (ReadHeight() && ReadWeight()) { DisplayResults(); } else MessageBox.Show("Please check inputdata again!");
 
             }
         }
+        
         //TODO problem med utdata
         private void DisplayResults()
         {
             double myBmi;
             ReadHeight();
-            myBmi = bmiCalc.CalculateBMI();
+            myBmi = bmiCalc.CalculateBMI;
             string outDataString = (myBmi.ToString());
             label6.Text = outDataString;
             label7.Text = bmiCalc.BmiWeightCategory();
-            label8.Text = bmiCalc.GetName();
+            label8.Text = bmiCalc.Name;
         }
 
         private bool ReadInputBMI()
@@ -106,7 +102,7 @@ namespace Assignment3
             {
                 if (outValue > 0)
                 {
-                    if (bmiCalc.GetUnit() == UnitTypes.American)
+                    if (bmiCalc.Unit == UnitTypes.American)
                     {
                         bmiCalc.SetHeight(outValue * 12.00); // * 12.00
                     }
@@ -136,14 +132,14 @@ namespace Assignment3
             {
                 if (outValue > 0)
                 {
-                    if (bmiCalc.GetUnit() == UnitTypes.American)
+                    if (bmiCalc.Unit == UnitTypes.American)
                     {
-                        bmiCalc.SetWeight(outValue * 4);
+                        bmiCalc.Weight = outValue;
 
                     }
                     else
                     {
-                        bmiCalc.SetWeight(outValue);
+                        bmiCalc.Weight = outValue;
 
                     }
                 }
