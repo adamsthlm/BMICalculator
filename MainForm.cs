@@ -86,7 +86,6 @@ namespace Assignment3
             string outDataString = (myBmi.ToString());
             label6.Text = outDataString;
             label7.Text = bmiCalc.BmiWeightCategory();
-            label8.Text = bmiCalc.Name;
             groupBox2.Text = "Result for " + bmiCalc.Name;
         }
 
