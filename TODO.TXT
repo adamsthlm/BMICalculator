@@ -5,14 +5,14 @@ e-mail: ak7764@mau.se
 
 ... här i min TODO fil kan jag skriva vad jag vill
 eller nästan vad jag vill ...
- 
+
 1) Nästa vecka ska Assignment 3 vara färdig. Jag har lite kvar gällande beräkningen och pressentationen. 
-
-2) Det verkar bara som om den Amerikanska uträkningen inte fungerar.
-
-3) Jag kanske behöver fixa så att lite mindre decimaler kommer med.
-
+** fixad 2020-03-14 ** 2) Det verkar bara som om den Amerikanska uträkningen inte fungerar.
+** fixad 2020-03-14 ** 3) Jag kanske behöver fixa så att lite mindre decimaler kommer med.
 4) Fixa svensk stavningskontroll
 
-
-
+============================================================================
+Skriva dokumentation till metoderna
+ta bort en label
+============================================================================
+ 

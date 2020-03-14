@@ -4,6 +4,8 @@ Namn: Carl-Adam Berglund
 e-mail: ak7764@mau.se
 */
 
+using System;
+
 namespace Assignment3
 {
     class BMICalculator
@@ -98,6 +100,9 @@ namespace Assignment3
                     factor = 1.0;
                 }
                 double bmiValue = factor * weight / (height * height);
+                double bmiValueRounded = Math.Round((double)bmiValue, 1);
+                bmiValue = bmiValueRounded;
+
 
                 return bmiValue;
             }

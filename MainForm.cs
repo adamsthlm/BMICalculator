@@ -33,6 +33,7 @@ namespace Assignment3
             // output controls
             txHeight.Text = string.Empty;
             txWeight.Text = string.Empty;
+            
 
         }
 
@@ -47,6 +48,7 @@ namespace Assignment3
             {
                 lblHeight.Text = "Height in (cm)";
                 lblWeight.Text = "Weight in (kg)";
+                bmiCalc.Unit = UnitTypes.Metric;
             }
         }
 
@@ -55,7 +57,8 @@ namespace Assignment3
             if (rbtnUsUnit.Checked)
             {
                 lblHeight.Text = "Height in (feet)";
-                lblWeight.Text = "Height in (lbs)";
+                lblWeight.Text = "Weight in (lbs)";
+                bmiCalc.Unit = UnitTypes.American;
             }
         }
 
@@ -67,6 +70,7 @@ namespace Assignment3
                 bmiCalc.Name = txtName.Text;
                 bmiCalc.Weight = double.Parse(txWeight.Text);
                 bmiCalc.SetHeight(double.Parse(txHeight.Text));
+                
 
                 if (ReadHeight() && ReadWeight()) { DisplayResults(); } else MessageBox.Show("Please check inputdata again!");
 
@@ -83,6 +87,7 @@ namespace Assignment3
             label6.Text = outDataString;
             label7.Text = bmiCalc.BmiWeightCategory();
             label8.Text = bmiCalc.Name;
+            groupBox2.Text = "Result for " + bmiCalc.Name;
         }
 
         private bool ReadInputBMI()
@@ -150,10 +155,7 @@ namespace Assignment3
             return ok;
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
+      
     } // end class
 } // end namespace
 
