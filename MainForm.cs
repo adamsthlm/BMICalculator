@@ -1,7 +1,8 @@
 ﻿/*
 Denna fil har skapats som en del av kursen [C# I] på Malmö Universitet 2020
-Namn: Carl-Adam Berglund
-e-mail: ak7764@mau.se
+Skapare: Carl-Adam Berglund
+e-mail: adam@carl-adam.tech
+StudentID: ak7764
 */
 
 
@@ -37,10 +38,12 @@ namespace Assignment3
 
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
 
-        }
+        // Här märkte jag att om jag bara remmar här så får jag ett fel i den autogenererade delen och måste remma där med..
+        //private void MainForm_Load(object sender, EventArgs e)
+        //{
+
+        //}
 
         private void RbtMetric_CheckedChanged(object sender, EventArgs e)
         {
@@ -70,14 +73,10 @@ namespace Assignment3
                 bmiCalc.Name = txtName.Text;
                 bmiCalc.Weight = double.Parse(txWeight.Text);
                 bmiCalc.SetHeight(double.Parse(txHeight.Text));
-                
-
-                if (ReadHeight() && ReadWeight()) { DisplayResults(); } else MessageBox.Show("Please check inputdata again!");
-
+                DisplayResults();
             }
         }
         
-        //TODO problem med utdata
         private void DisplayResults()
         {
             double myBmi;
@@ -93,9 +92,19 @@ namespace Assignment3
         {
             if (txtName.Text.Length.Equals(0))
             {
+                MessageBox.Show("Please enter a name!");
                 return false;
             }
-            else return true;
+            else if (txHeight.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Please enter height!");
+                return false;
+            }
+            else if (txWeight.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Please enter weight!");
+                return false;
+            } return true;
         }
 
 
@@ -128,7 +137,6 @@ namespace Assignment3
         }
 
         // ReadWeight is based on ReadHeight check calculation..
-        // Det är något alvarligt fel med den Amerikanska beräkningen
         private bool ReadWeight()
         {
             bool ok = double.TryParse(txWeight.Text, out double outValue);

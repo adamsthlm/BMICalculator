@@ -1,7 +1,8 @@
 ﻿/*
 Denna fil har skapats som en del av kursen [C# I] på Malmö Universitet 2020
-Namn: Carl-Adam Berglund
-e-mail: ak7764@mau.se
+Skapare: Carl-Adam Berglund
+e-mail: adam@carl-adam.tech
+StudentID: ak7764
 */
 
 using System;
@@ -11,17 +12,15 @@ namespace Assignment3
     class BMICalculator
     {
         private string name = "No Name";
-
         private double height = 0;
         private double weight = 0;
-
         private UnitTypes unit;
 
 
         /// <summary>
-        /// Getters och setters, först gjorde jag som i Java fast detta är mycket snyggare med propertys alltså..-------------- Getters och setter starts -----------
+        /// Getters och setters, först gjorde jag som i Java fast detta är mycket snyggare med propertys alltså..-------------- Getters och setter starts here -----------
         /// </summary>
-        /// <returns></returns>
+        /// <returns> Name of user </returns>
         public string Name
         {
             get => name;
@@ -36,7 +35,6 @@ namespace Assignment3
         }
 
         public double Height => height; // en snyggare getter och setter
-
         public void SetHeight(double value)
         {
             if (value >= 0)
@@ -61,6 +59,11 @@ namespace Assignment3
 
         // ------------------------------------------------------------------ getter and setter ends 
 
+
+        /// <summary>
+        /// This method classifies the result in to three diffrent classes and returns a more human readable translation of the numbers
+        /// </summary>
+        /// <returns> string </returns>
         public string BmiWeightCategory()
         {
             double bmi = CalculateBMI;
@@ -83,9 +86,13 @@ namespace Assignment3
             return stringout;
         }
 
-        // TODO: this is my last entry, på tisdag borde jag kunna pressentera resultat textBoxen
+        // TODO: this is my last entry 2020-03-10, på tisdag borde jag kunna pressentera resultat textBoxen
         // Jag kunde inte låtabli att kolla på videon till slut... :( && jag trycker alt-enter på allt möjligt nu, hehe!
-        // 
+         
+        
+        /// <summary>
+        /// translate betwen Imperial and Metric systems, it turns out ImperialBMI has a factor of 703 to the MetricBMI
+        /// </summary>
         public double CalculateBMI
         {
             get

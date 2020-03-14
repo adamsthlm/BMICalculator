@@ -203,7 +203,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
             this.Text = "BMI Calculator by Carl-Adam";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+          //  this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
