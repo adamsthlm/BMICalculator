@@ -20,3 +20,4 @@ Skriva dokumentation till metoderna
 ta bort en label
 ============================================================================
  
+ Fixa input så att man inte kan skriva in fel tecken

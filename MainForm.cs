@@ -7,6 +7,7 @@ StudentID: ak7764
 
 
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Assignment3
@@ -84,18 +85,34 @@ namespace Assignment3
             myBmi = bmiCalc.CalculateBMI;
             string outDataString = (myBmi.ToString());
             label6.Text = outDataString;
-            label7.Text = bmiCalc.BmiWeightCategory();
+            label7.Text = bmiCalc.BmiWeightCategory(); 
             groupBox2.Text = "Result for " + bmiCalc.Name;
         }
 
         private bool ReadInputBMI()
         {
+            // Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+            Regex regex = new Regex(@"^[0-9]+$"); // Bantad expression bättre anpassad för mina behov?
+
+            if (!regex.IsMatch(txHeight.Text))
+            {
+                MessageBox.Show("Incorrect value (Height), only numbers are allowed");
+                return false;
+            }
+
+            if (!regex.IsMatch(txWeight.Text))
+            {
+                MessageBox.Show("Incorrect value (Weight), only numbers are allowed");
+                return false;
+            }
+
+            
             if (txtName.Text.Length.Equals(0))
             {
                 MessageBox.Show("Please enter a name!");
                 return false;
             }
-            else if (txHeight.Text.Length.Equals(0))
+            else if (txHeight.Text.Length.Equals(0)) // eller om inte ett nummer v
             {
                 MessageBox.Show("Please enter height!");
                 return false;
@@ -136,31 +153,31 @@ namespace Assignment3
 
         }
 
-        // ReadWeight is based on ReadHeight check calculation..
-        private bool ReadWeight()
-        {
-            bool ok = double.TryParse(txWeight.Text, out double outValue);
-            if (ok)
-            {
-                if (outValue > 0)
-                {
-                    if (bmiCalc.Unit == UnitTypes.American)
-                    {
-                        bmiCalc.Weight = outValue;
+        // ReadWeight is based on ReadHeight check calculation... Den funkar nästan ... fast jag tycker jag har rört till det.
+        //private bool ReadWeight()
+        //{
+        //    bool ok = double.TryParse(txWeight.Text, out double outValue);
+        //    if (ok)
+        //    {
+        //        if (outValue > 0)
+        //        {
+        //            if (bmiCalc.Unit == UnitTypes.American)
+        //            {
+        //                bmiCalc.Weight = outValue;
 
-                    }
-                    else
-                    {
-                        bmiCalc.Weight = outValue;
+        //            }
+        //            else
+        //            {
+        //                bmiCalc.Weight = outValue;
 
-                    }
-                }
-                else ok = false;
-            }
-            if (!ok)
-                MessageBox.Show("Invalid weight value!");
-            return ok;
-        }
+        //            }
+        //        }
+        //        else ok = false;
+        //    }
+        //    if (!ok)
+        //        MessageBox.Show("Invalid weight value!");
+        //    return ok;
+        //}
 
       
     } // end class
